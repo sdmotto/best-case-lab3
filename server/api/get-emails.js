@@ -1,4 +1,3 @@
-// server/api/get-emails.js
 import { promises as fs } from 'fs';
 import path from 'path';
 

@@ -4,8 +4,8 @@
     </div>
     <form @submit.prevent="handleSubmit">
         <div>
-            <label for="fromEmail">To:</label>
-            <input type="email" id="fromEmail" :value="to" disabled />
+            <label for="toEmail">To:</label>
+            <input type="email" id="toEmail" :value="to" disabled />
         </div>
 
         <div>
@@ -45,8 +45,7 @@
 </template>
   
 <script setup>
-import { ref } from 'vue';
-import { defineProps } from 'vue';
+import { ref, defineProps } from 'vue';
 
 const fromEmail = ref('');
 const subject = ref('');
