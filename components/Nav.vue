@@ -42,6 +42,10 @@ async function verifyPassword() {
         body: { password: passwordInput.value },
     });
     isVerified.value = data.success;
+
+    if (!data.success) {
+      passwordInput.value = "";
+    }
 }
 
 async function unverify() {

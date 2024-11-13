@@ -75,7 +75,7 @@ async function handleSubmit() {
     if (response.success) {
       status.value = "Successfully sent email.";
     } else {
-      status.value = "Error sending email: " + response.error;
+      status.value = "Error sending email.";
     }
   } catch (error) {
     status.value = "Error sending email.";
