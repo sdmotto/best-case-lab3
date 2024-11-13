@@ -1,7 +1,5 @@
 <template>
-    <div>
-        Protected Area
-    </div>
+    <h1>Protected Area</h1>
     <button><router-link to="/emails">Email Log</router-link></button>
 </template>
 

@@ -14,7 +14,6 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
         return navigateTo('/');
       }
     } catch (error) {
-      // Redirect if the token is invalid, expired, or tampered with
       return navigateTo('/');
     }
   }

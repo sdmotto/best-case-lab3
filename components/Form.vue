@@ -1,47 +1,47 @@
 <template>
-    <div v-if="status">
-        {{ status }}
+  <div v-if="status">
+      {{ status }}
+  </div>
+  <form @submit.prevent="handleSubmit">
+    <div>
+      <label for="toEmail">To:</label>
+      <input type="email" id="toEmail" :value="to" disabled />
     </div>
-    <form @submit.prevent="handleSubmit">
-        <div>
-            <label for="toEmail">To:</label>
-            <input type="email" id="toEmail" :value="to" disabled />
-        </div>
 
-        <div>
-            <label for="fromEmail">Your Email:</label>
-            <input
-                type="email"
-                id="fromEmail"
-                v-model="fromEmail"
-                placeholder="Enter your email"
-                required
-            />
-        </div>
+    <div>
+      <label for="fromEmail">Your Email:</label>
+      <input
+          type="email"
+          id="fromEmail"
+          v-model="fromEmail"
+          placeholder="Enter your email"
+          required
+      />
+    </div>
 
-        <div>
-            <label for="subject">Subject:</label>
-            <input 
-                type="text" 
-                id="subject" 
-                v-model="subject" 
-                placeholder="Enter subject" 
-                required
-            />
-        </div>
+    <div>
+      <label for="subject">Subject:</label>
+      <input 
+          type="text" 
+          id="subject" 
+          v-model="subject" 
+          placeholder="Enter subject" 
+          required
+      />
+    </div>
 
-        <div>
-            <label for="message">Message:</label>
-            <textarea 
-                id="message" 
-                v-model="message" 
-                placeholder="Enter your message"
-                required
-            />
-        </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea 
+          id="message" 
+          v-model="message" 
+          placeholder="Enter your message"
+          required
+      />
+    </div>
 
-        <button type="submit">Send</button>
-    </form>
+    <button type="submit">Send</button>
+  </form>
 </template>
   
 <script setup>
