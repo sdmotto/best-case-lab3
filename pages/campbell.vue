@@ -3,7 +3,7 @@
         <div>
           <h1>Contact Campbell Tressler</h1>
           <p>
-            My name is Campbell Tressler. I like trains.
+            My name is Campbell Tressler. I am a computer science and engineering student and the driver of the 87T IMCA Sport Compact car at the Independence and Marshalltown Speedways. I spend my free time going to the gym or working on my car. 
           </p>
           <Form :to="'ctresslercf@gmail.com'" />
         </div>
