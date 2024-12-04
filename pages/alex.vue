@@ -5,7 +5,6 @@
         Hey there! I'm Alex Lehman, a fourth-year Computer Science and Engineering student at Iowa. I love music, especially J. Cole, Rex Orange County, and Olivia Rodrigo. Also, go Hawkeyes, Cowboys, and Thunder!
       </p>
       <Form :to="'alexlehman7@gmail.com'" />
-      <button class="submit-btn">Send Message</button>
     </div>
   </template>
   
@@ -35,21 +34,6 @@
     font-size: 16px;
     margin-bottom: 20px;
     color: #555;
-  }
-  
-  .submit-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0056b3;
   }
   
   </style>
