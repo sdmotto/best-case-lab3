@@ -1,4 +1,5 @@
 <template>
+    <Form :to="'ethanwcox@gmail.com'" />
 
 </template>
 
