@@ -5,5 +5,12 @@ export default defineNuxtConfig({
   routeRules: {
     '/protected': { appMiddleware: 'auth' },
     '/emails': { appMiddleware: 'auth' },
-  }
-})
+  },
+  css: ['~/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+});

@@ -13,7 +13,7 @@ new_password="$1"
 if [ "$2" == "heroku" ]; then
   # Update the CORRECT_PASSWORD variable on Heroku
   echo "Updating CORRECT_PASSWORD on Heroku..."
-  heroku config:set CORRECT_PASSWORD="$new_password" --app your-heroku-app-name
+  heroku config:set CORRECT_PASSWORD="$new_password" --app polar-woodland-68448
   echo "Heroku CORRECT_PASSWORD updated successfully."
 else
   # Check if the .env file exists
