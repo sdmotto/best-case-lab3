@@ -1,10 +1,15 @@
 <template>
     <div class="form-container">
-      <h1>Contact Alex Lehman</h1>
-      <p>
-        Hey there! I'm Alex Lehman, a fourth-year Computer Science and Engineering student at Iowa. I love music, especially J. Cole, Rex Orange County, and Olivia Rodrigo. Also, go Hawkeyes, Cowboys, and Thunder!
-      </p>
-      <Form :to="'alexlehman7@gmail.com'" />
+      <div class="content">
+        <div>
+          <h1>Contact Alex Lehman</h1>
+          <p>
+            Hey there! I'm Alex Lehman, a fourth-year Computer Science and Engineering student at Iowa. I love music, especially J. Cole, Rex Orange County, and Olivia Rodrigo. Also, go Hawkeyes, Cowboys, and Thunder!
+          </p>
+          <Form :to="'alexlehman7@gmail.com'" />
+        </div>
+        <img src="@/assets/images/okc_logo.svg" alt="OKC Logo" class="okc-logo" />
+      </div>
     </div>
   </template>
   
@@ -13,14 +18,19 @@
   
   <style scoped>
   .form-container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
-    text-align: center;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   h1 {
@@ -36,5 +46,10 @@
     color: #555;
   }
   
+  .okc-logo {
+    max-width: 100px;
+    height: auto;
+    margin-left: 20px;
+  }
   </style>
   
