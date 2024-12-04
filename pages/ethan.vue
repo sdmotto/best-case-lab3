@@ -3,13 +3,13 @@
       <div class="content">
         <div>
           <h1>Contact Ethan Cox</h1>
-            </div>
-                <img src="@/assets/images/liverpool.png" alt="OKC Logo" class="okc-logo" />
-            </div>
-          <p>
-            Hello! I am Ethan Cox, a fourth year Electrical Engineering student at the University of Iowa. I love soccer and bouldering and am an avid Liverpool fan. My favorite artists are The Voidz, The Strokes, and Mt. Joy. Feel free to contact me using the form below.
-          </p>
-          <Form :to="'ethanwcox@gmail.com'" />
+        </div>
+        <img src="@/assets/images/Ethan Stanced Up.png" alt="OKC Logo" class="okc-logo" />
+      </div>
+      <p>
+        Hello! I am Ethan Cox, a fourth year Electrical Engineering student at the University of Iowa. I love soccer and bouldering and am an avid Liverpool fan. My favorite artists are The Voidz, The Strokes, and Mt. Joy. Feel free to contact me using the form below.
+      </p>
+      <Form :to="'ethanwcox@gmail.com'" />
     </div>
   </template>
   
@@ -50,6 +50,7 @@
     max-width: 100px;
     height: auto;
     margin-left: 20px;
+    border-radius: 12px; /* Adds rounded corners to the image */
   }
   </style>
   

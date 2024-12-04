@@ -4,7 +4,7 @@
         <div>
           <h1>Contact Alex Lehman</h1>
             </div>
-              <img src="@/assets/images/okc_logo.svg" alt="OKC Logo" class="okc-logo" />
+              <img src="@/assets/images/Alex Stanced Up.png" alt="OKC Logo" class="okc-logo" />
             </div>
           <p>
             Hey there! I'm Alex Lehman, a fourth-year Computer Science and Engineering student at Iowa. I love music, especially J. Cole, Rex Orange County, and Olivia Rodrigo. Also, go Hawkeyes, Cowboys, and Thunder!
@@ -50,6 +50,6 @@
     max-width: 100px;
     height: auto;
     margin-left: 20px;
+    border-radius: 12px; /* Adds rounded corners to the image */
   }
   </style>
-  
