@@ -1,29 +1,91 @@
 <template>
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><router-link to="/">Home</router-link></li>
-      <li v-if="isVerified"><router-link to="/protected">Protected Area</router-link></li>
-      <li><router-link to="/campbell">Campbell</router-link></li>
-      <li><router-link to="/alex">Alex</router-link></li>
-      <li><router-link to="/sam">Sam</router-link></li>
-      <li><router-link to="/ethan">Ethan</router-link></li>
+  <nav class="bg-black text-white shadow-lg p-4 flex justify-between items-center">
+    <!-- Navigation Links -->
+    <ul class="flex space-x-6">
+      <li>
+        <router-link 
+          to="/" 
+          class="relative group text-lg font-medium transition duration-300"
+        >
+          Home
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+        </router-link>
+      </li>
+      <li v-if="isVerified">
+        <router-link 
+          to="/protected" 
+          class="relative group text-lg font-medium transition duration-300"
+        >
+          Protected Area
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+        </router-link>
+      </li>
+      <li>
+        <router-link 
+          to="/campbell" 
+          class="relative group text-lg font-medium transition duration-300"
+        >
+          Campbell
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+        </router-link>
+      </li>
+      <li>
+        <router-link 
+          to="/alex" 
+          class="relative group text-lg font-medium transition duration-300"
+        >
+          Alex
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+        </router-link>
+      </li>
+      <li>
+        <router-link 
+          to="/sam" 
+          class="relative group text-lg font-medium transition duration-300"
+        >
+          Sam
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+        </router-link>
+      </li>
+      <li>
+        <router-link 
+          to="/ethan" 
+          class="relative group text-lg font-medium transition duration-300"
+        >
+          Ethan
+          <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+        </router-link>
+      </li>
     </ul>
+
+    <!-- Password Area -->
+    <div class="flex items-center space-x-4">
+      <div v-if="isVerified">
+        <button 
+          @click="unverify()" 
+          class="bg-red-600 hover:bg-red-500 text-white font-semibold px-4 py-2 rounded transition"
+        >
+          Unverify
+        </button>
+      </div>
+      <div v-else class="flex flex-col space-y-2">
+        <div class="flex space-x-2">
+          <input
+            type="password"
+            v-model="passwordInput"
+            placeholder="Enter password"
+            class="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-black"
+          />
+          <button 
+            @click="verifyPassword()" 
+            class="bg-green-600 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded transition"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
   </nav>
-  <div class="content">
-    <div v-if="isVerified" class="verification-section">
-      <button @click="unverify()" class="action-button">Unverify</button>
-    </div>
-    <div v-else class="password-section">
-      <h2>Enter Password to Access Protected Content</h2>
-      <input
-        type="password"
-        v-model="passwordInput"
-        placeholder="Enter password"
-        class="password-input"
-      />
-      <button @click="verifyPassword()" class="action-button">Submit</button>
-    </div>
-  </div>
 </template>
 
 <script setup>
@@ -59,95 +121,38 @@ async function unverify() {
 </script>
 
 <style scoped>
-/* Navbar Styling */
-.navbar {
+
+nav {
   background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.nav-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem; /* Space between links */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  display: inline-block;
-}
-
-.nav-links a {
+nav a {
+  color: #ffffff;
   text-decoration: none;
-  color: #ffffff; /* White text */
   font-size: 1rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+  margin: 0 1rem;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  background-color: #ffcc00; /* Gold on hover */
-  color: #000000; /* Black text */
-  border-radius: 20px; /* Rounded corners on hover */
+nav a:hover {
+  color: #ffcc00; /* Gold on hover */
 }
 
-/* Content Area */
-.content {
-  padding: 2rem;
-  text-align: center;
-}
-
-.verification-section,
-.password-section {
-  margin: 2rem auto;
-}
-
-.password-input {
-  padding: 0.75rem;
-  font-size: 1rem;
-  width: 100%;
-  max-width: 300px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
-
-.password-input:focus {
-  outline: none;
-  border-color: #ffcc00; /* Gold border on focus */
-}
-
-/* Button Styling */
-.action-button {
-  background-color: #000000; /* Black */
-  color: #ffffff; /* White text */
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.action-button:hover {
-  background-color: #ffcc00; /* Gold hover */
-  color: #000000; /* Black text */
-  border-radius: 5px;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .nav-links {
+  nav {
     flex-direction: column;
-    gap: 1rem; /* Reduce space between links */
+    align-items: flex-start;
   }
 
-  .password-input {
-    width: 100%;
+  nav a {
+    margin: 0.5rem 0;
   }
 }
+
 </style>

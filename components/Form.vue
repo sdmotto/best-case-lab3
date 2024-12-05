@@ -10,12 +10,12 @@
       </div>
 
       <div class="form-group">
-        <label for="fromEmail">Your Email:</label>
+        <label for="fromEmail">Your Name:</label>
         <input
-          type="email"
+          type="text"
           id="fromEmail"
           v-model="fromEmail"
-          placeholder="Enter your email"
+          placeholder="Enter your name"
           required
         />
       </div>
@@ -41,7 +41,12 @@
         />
       </div>
 
-      <button type="submit" class="submit-button">Send</button>
+      <button 
+        type="submit" 
+        class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 hover:shadow-lg transition duration-300 ease-in-out"
+      >
+        Send
+      </button>
     </form>
   </div>
 </template>
@@ -140,24 +145,6 @@ async function handleSubmit() {
   border: 2px solid #ffcc00; /* Gold focus border */
 }
 
-/* Submit Button Styling */
-.submit-button {
-  background-color: #000000; /* Black */
-  color: #ffffff; /* White text */
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.submit-button:hover {
-  background-color: #ffcc00; /* Gold */
-  color: #000000; /* Black text */
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .form-container {
@@ -166,11 +153,6 @@ async function handleSubmit() {
 
   .form-group {
     margin-bottom: 1rem; /* Slightly reduce spacing on smaller screens */
-  }
-
-  .submit-button {
-    padding: 0.75rem; /* Adjust button padding */
-    font-size: 0.9rem; /* Slightly reduce font size */
   }
 }
 </style>
