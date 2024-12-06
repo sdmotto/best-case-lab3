@@ -1,12 +1,8 @@
 <template>
-    <h1>Protected Area</h1>
-    <button><router-link to="/emails">Email Log</router-link></button>
+  <h1>Protected Area</h1>
+  <button><router-link to="/emails">Email Log</router-link></button>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -22,27 +22,27 @@
 
       <div class="form-group">
         <label for="subject">Subject:</label>
-        <input 
-          type="text" 
-          id="subject" 
-          v-model="subject" 
-          placeholder="Enter subject" 
+        <input
+          type="text"
+          id="subject"
+          v-model="subject"
+          placeholder="Enter subject"
           required
         />
       </div>
 
       <div class="form-group">
         <label for="message">Message:</label>
-        <textarea 
-          id="message" 
-          v-model="message" 
+        <textarea
+          id="message"
+          v-model="message"
           placeholder="Enter your message"
           required
         />
       </div>
 
-      <button 
-        type="submit" 
+      <button
+        type="submit"
         class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 hover:shadow-lg transition duration-300 ease-in-out"
       >
         Send
@@ -52,12 +52,12 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue';
+import { ref, defineProps } from "vue";
 
-const fromEmail = ref('');
-const subject = ref('');
-const message = ref('');
-const status = ref('');
+const fromEmail = ref("");
+const subject = ref("");
+const message = ref("");
+const status = ref("");
 
 const props = defineProps({
   to: {
@@ -68,8 +68,8 @@ const props = defineProps({
 
 async function handleSubmit() {
   try {
-    const response = await $fetch('/api/send-email', {
-      method: 'POST',
+    const response = await $fetch("/api/send-email", {
+      method: "POST",
       body: {
         to: props.to,
         fromEmail: fromEmail.value,
@@ -79,16 +79,16 @@ async function handleSubmit() {
     });
 
     if (response.success) {
-      status.value = 'Successfully sent email.';
+      status.value = "Successfully sent email.";
     } else {
-      status.value = 'Error sending email.';
+      status.value = "Error sending email.";
     }
   } catch (error) {
-    status.value = 'Error sending email.';
+    status.value = "Error sending email.";
   }
 
   setTimeout(() => {
-    status.value = '';
+    status.value = "";
   }, 3000);
 }
 </script>

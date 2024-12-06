@@ -14,15 +14,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
 const emails = ref([]);
 
 onMounted(async () => {
-  emails.value = await $fetch('/api/get-emails');
+  emails.value = await $fetch("/api/get-emails");
 });
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

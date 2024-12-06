@@ -1,6 +1,6 @@
-import nodemailer from 'nodemailer';
-import { promises as fs } from 'fs';
-import path from 'path';
+import nodemailer from "nodemailer";
+import { promises as fs } from "fs";
+import path from "path";
 
 export default defineEventHandler(async (event) => {
   const { to, fromEmail, subject, message } = await readBody(event);
@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
   });
 
   const mailOptions = {
-    from: 'best.case.labs@gmail.com',
+    from: "best.case.labs@gmail.com",
     to,
     subject,
     text: formatEmail(),
@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
   try {
     await transporter.sendMail(mailOptions);
     await saveEmail();
-    
+
     return { success: true };
   } catch (error) {
     return { success: false };
@@ -36,17 +36,17 @@ export default defineEventHandler(async (event) => {
   }
 
   async function saveEmail() {
-    const filePath = path.resolve('db/emails.json');
+    const filePath = path.resolve("db/emails.json");
 
     let emailLogs = [];
-    const fileData = await fs.readFile(filePath, 'utf8');
+    const fileData = await fs.readFile(filePath, "utf8");
     emailLogs = JSON.parse(fileData);
 
     emailLogs.push({
       from: fromEmail,
       to: to,
       subject: subject,
-      message: message
+      message: message,
     });
 
     await fs.writeFile(filePath, JSON.stringify(emailLogs, null, 2));

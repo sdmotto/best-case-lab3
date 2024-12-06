@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken';
-import { defineEventHandler, readBody, setCookie } from 'h3';
+import jwt from "jsonwebtoken";
+import { defineEventHandler, readBody, setCookie } from "h3";
 
 const correctPassword = process.env.CORRECT_PASSWORD;
 
@@ -7,13 +7,15 @@ export default defineEventHandler(async (event) => {
   const { password } = await readBody(event);
 
   if (password === correctPassword) {
-    const token = jwt.sign({ verified: true }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ verified: true }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
 
-    setCookie(event, 'authToken', token, {
+    setCookie(event, "authToken", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60,
-      path: '/',
+      path: "/",
     });
 
     return { success: true };
