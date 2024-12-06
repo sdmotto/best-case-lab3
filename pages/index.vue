@@ -13,7 +13,7 @@
     <p
       class="about-text text-lg md:text-xl text-center max-w-3xl mb-8 leading-relaxed"
     >
-      Welcome to our website. Here you can view our past projects and
+      Welcome to our website. Here you can view our projects and
       information about each team member.
     </p>
 
