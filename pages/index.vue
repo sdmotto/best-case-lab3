@@ -1,10 +1,10 @@
 <template>
   <div
-    class="landing-page bg-yellow-400 text-black min-h-screen flex flex-col items-center justify-center px-6"
+    class="landing-page text-black min-h-screen flex flex-col items-center justify-center px-6"
   >
     <!-- Team Name -->
     <h1
-      class="team-name text-4xl md:text-5xl font-extrabold mb-6 text-center uppercase shadow-md"
+      class="team-name text-4xl md:text-5xl font-extrabold mb-6 text-center uppercase"
     >
       Best CASE Scenario
     </h1>

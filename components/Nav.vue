@@ -109,7 +109,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const passwordInput = ref("");
 const isVerified = ref(false);
@@ -138,6 +141,33 @@ async function unverify() {
 
   navigateTo("/");
 }
+
+const navigationSequence = ref([]);
+const requiredSequence = ["campbell", "alex", "sam", "ethan"];
+
+watch(
+  () => router.currentRoute.value.name, // Watch the current route name
+  (currentRoute) => {
+    const currentIndex = navigationSequence.value.length;
+
+    if (currentRoute === requiredSequence[currentIndex]) {
+      // Add the current route to the sequence if it's the next in order
+      navigationSequence.value.push(currentRoute);
+
+      // Check if the sequence matches the required sequence
+      if (navigationSequence.value.join() === requiredSequence.join()) {
+        // Navigate to the secret page
+        router.push({ name: "secret" });
+        navigationSequence.value = []; // Reset the sequence after navigation
+      }
+    } else if (!requiredSequence.includes(currentRoute) || currentRoute !== requiredSequence[currentIndex]) {
+      // Reset the sequence if the order is broken or a non-required route is visited
+      navigationSequence.value = [];
+    }
+  }
+);
+
+
 </script>
 
 <style scoped>

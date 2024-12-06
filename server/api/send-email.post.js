@@ -47,6 +47,7 @@ export default defineEventHandler(async (event) => {
       to: to,
       subject: subject,
       message: message,
+      timestamp: new Date().toISOString()
     });
 
     await fs.writeFile(filePath, JSON.stringify(emailLogs, null, 2));
