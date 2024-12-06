@@ -22,7 +22,7 @@
       <h2
         class="text-2xl md:text-3xl font-bold mb-4 uppercase border-b-2 border-black pb-2"
       >
-        Past Projects
+        Projects
       </h2>
       <ul>
         <router-link to="/lab1">
