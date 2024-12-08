@@ -6,5 +6,13 @@
     "message": "eyah",
     "timestamp": "2024-12-08T21:25:29.792Z",
     "person": "Campbell"
+  },
+  {
+    "from": "hello",
+    "to": "motto.d.sam@gmail.com",
+    "subject": "good bye",
+    "message": "yeppers",
+    "timestamp": "2024-12-08T21:42:32.044Z",
+    "person": "Sam"
   }
 ]

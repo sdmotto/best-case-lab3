@@ -43,9 +43,11 @@
 
       <button
         type="submit"
-        class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 hover:shadow-lg transition duration-300 ease-in-out"
+        :disabled="loading"
+        class="bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 hover:shadow-lg transition duration-300 ease-in-out disabled:bg-gray-300 disabled:cursor-not-allowed"
       >
-        Send
+        <span v-if="loading">Sending...</span>
+        <span v-else>Send</span>
       </button>
     </form>
   </div>
@@ -58,6 +60,7 @@ const fromEmail = ref("");
 const subject = ref("");
 const message = ref("");
 const status = ref("");
+const loading = ref(false);
 
 const props = defineProps({
   to: {
@@ -71,6 +74,7 @@ const props = defineProps({
 });
 
 async function handleSubmit() {
+  loading.value = true;
   try {
     const response = await $fetch("/api/send-email", {
       method: "POST",
@@ -94,6 +98,7 @@ async function handleSubmit() {
     fromEmail.value = '';
     subject.value = '';
     message.value = '';
+    loading.value = false;
   }
 
   setTimeout(() => {
@@ -152,6 +157,11 @@ async function handleSubmit() {
 .form-group textarea:focus {
   outline: none;
   border: 2px solid #ffcc00; /* Gold focus border */
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: #cccccc; /* Gray background for disabled state */
 }
 
 /* Responsive Design */
