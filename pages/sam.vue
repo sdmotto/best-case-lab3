@@ -13,12 +13,15 @@
         class="picture"
       />
     </div>
-    <p>
+    <p class="mt-2">
       Howdy! My name is Sam Motto and I am a fourth-year Computer Science and Engineering Student at
       the University of Iowa. I work for the ICON team at the University and did a lot of work on SPOT 
       this past summer. Back home, I have two dogs named Ellie and Maple. Feel free to contact me using the form below.
     </p>
-    <Form :to="email" />
+    <Form
+      :to="email"
+      :person="'Sam'"
+    />
   </div>
 </template>
 

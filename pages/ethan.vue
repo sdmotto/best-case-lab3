@@ -16,7 +16,10 @@
       fan. My favorite artists are The Voidz, The Strokes, and Mt. Joy. Feel
       free to contact me using the form below.
     </p>
-    <Form :to="'ethanwcox@gmail.com'" />
+    <Form 
+      :to="'ethanwcox@gmail.com'"
+      :person="'Ethan'"
+    />
   </div>
 </template>
 

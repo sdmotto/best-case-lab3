@@ -8,7 +8,10 @@
         Independence and Marshalltown Speedways. I spend my free time going to
         the gym or working on my car.
       </p>
-      <Form :to="'ctresslercf@gmail.com'" />
+      <Form 
+        :to="'ctresslercf@gmail.com'"
+        :person="'Campbell'"
+      />
     </div>
   </div>
 </template>

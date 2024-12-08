@@ -64,6 +64,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  person: {
+    type: String,
+    required: true
+  }
 });
 
 async function handleSubmit() {
@@ -75,6 +79,7 @@ async function handleSubmit() {
         fromEmail: fromEmail.value,
         subject: subject.value,
         message: message.value,
+        person: props.person
       },
     });
 

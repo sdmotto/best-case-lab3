@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 import path from "path";
 
 export default defineEventHandler(async (event) => {
-  const { to, fromEmail, subject, message } = await readBody(event);
+  const { to, fromEmail, subject, message, person } = await readBody(event);
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -47,7 +47,8 @@ export default defineEventHandler(async (event) => {
       to: to,
       subject: subject,
       message: message,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      person: person
     });
 
     await fs.writeFile(filePath, JSON.stringify(emailLogs, null, 2));

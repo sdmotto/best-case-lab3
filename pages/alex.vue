@@ -15,7 +15,10 @@
       student at Iowa. I love music, especially J. Cole, Rex Orange County, and
       Olivia Rodrigo. Also, go Hawkeyes, Cowboys, and Thunder!
     </p>
-    <Form :to="'alexlehman7@gmail.com'" />
+    <Form 
+      :to="'alexlehman7@gmail.com'"
+      :person="'Alex'"
+    />
   </div>
 </template>
 
