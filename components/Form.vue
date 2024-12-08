@@ -85,6 +85,10 @@ async function handleSubmit() {
     }
   } catch (error) {
     status.value = "Error sending email.";
+  } finally {
+    fromEmail.value = '';
+    subject.value = '';
+    message.value = '';
   }
 
   setTimeout(() => {

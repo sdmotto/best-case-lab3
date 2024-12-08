@@ -32,7 +32,7 @@ export default defineEventHandler(async (event) => {
   }
 
   function formatEmail() {
-    return `This email is sent from ${fromEmail}\n\n` + message;
+    return `This email is sent from: ${fromEmail}.\n\n` + message;
   }
 
   async function saveEmail() {
