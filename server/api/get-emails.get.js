@@ -11,18 +11,14 @@ export default defineEventHandler(async (event) => {
     return [{ nice: "try" }];
   }
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    if (!decoded.verified) {
-      return [{ nice: "try" }];
-    }
-
-    const fileData = await fs.readFile(filePath, "utf8");
-    const emailLogs = JSON.parse(fileData);
-
-    return emailLogs;
-  } catch (error) {
-    throw new Error("ermm");
+  if (!decoded.verified) {
+    return [{ nice: "try" }];
   }
+
+  const fileData = await fs.readFile(filePath, "utf8");
+  const emailLogs = JSON.parse(fileData);
+
+  return emailLogs;
 });
