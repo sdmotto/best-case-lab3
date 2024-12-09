@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
   }
 
   async function saveEmail() {
-    const filePath = path.resolve(process.cwd(), "db/emails.json");
+    const filePath = path.resolve(process.cwd(), "server/api/emails.json");
 
     let emailLogs = [];
     const fileData = await fs.readFile(filePath, "utf8");
