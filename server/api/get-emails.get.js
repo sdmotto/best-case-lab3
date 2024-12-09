@@ -3,7 +3,7 @@ import path from "path";
 import jwt from "jsonwebtoken";
 
 export default defineEventHandler(async (event) => {
-  const filePath = path.resolve("db/emails.json");
+  const filePath = path.resolve(process.cwd(), "db/emails.json");
 
   const token = getCookie(event, "authToken");
 
