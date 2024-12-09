@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   const { password } = await readBody(event);
 
   if (password === correctPassword) {
-    const token = jwt.sign({ verified: true }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ verified: true }, correctPassword, {
       expiresIn: "1h",
     });
 

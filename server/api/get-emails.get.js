@@ -8,13 +8,13 @@ export default defineEventHandler(async (event) => {
     return [{ nice: "try" }];
   }
 
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  const decoded = jwt.verify(token, process.env.CORRECT_PASSWORD);
 
   if (!decoded.verified) {
     return [{ nice: "try" }];
   }
 
   const emailLogs = await runQuery("SELECT * FROM emails");
-  
+
   return emailLogs;
 });
