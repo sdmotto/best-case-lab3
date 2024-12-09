@@ -1,11 +1,8 @@
 import nodemailer from "nodemailer";
-import sqlite3 from "sqlite3";
-import { open } from "sqlite";
+import { runQuery } from "./db";
 
 export default defineEventHandler(async (event) => {
   const { to, fromEmail, subject, message, person } = await readBody(event);
-
-  const dbFilePath = "./db/dev.sqlite3";
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -42,22 +39,9 @@ export default defineEventHandler(async (event) => {
   }
 
   async function saveEmail() {
-    const db = await open({
-      filename: dbFilePath,
-      driver: sqlite3.Database,
-    });
-
-    try {
-      await db.run(
-        `INSERT INTO emails ("from", "to", subject, message, timestamp, person) VALUES (?, ?, ?, ?, ?, ?)`,
-        [fromEmail, to, subject, message, new Date().toISOString(), person]
-      );
-
-      console.log("Email log saved successfully.");
-    } catch (error) {
-      console.error("Error saving email log to database:", error);
-    } finally {
-      await db.close();
-    }
+    await runQuery(
+      `INSERT INTO emails ("from", "to", subject, message, timestamp, person) VALUES ($1, $2, $3, $4, $5, $6)`,
+      [fromEmail, to, subject, message, new Date().toISOString(), person]
+    );
   }
 });
