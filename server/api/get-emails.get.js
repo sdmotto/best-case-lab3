@@ -1,9 +1,9 @@
-import { promises as fs } from "fs";
-import path from "path";
+import sqlite3 from "sqlite3";
+import { open } from "sqlite";
 import jwt from "jsonwebtoken";
 
 export default defineEventHandler(async (event) => {
-  const filePath = path.resolve(process.cwd(), "server/api/emails.json");
+  const dbFilePath = "./db/dev.sqlite3";
 
   const token = getCookie(event, "authToken");
 
@@ -17,8 +17,20 @@ export default defineEventHandler(async (event) => {
     return [{ nice: "try" }];
   }
 
-  const fileData = await fs.readFile(filePath, "utf8");
-  const emailLogs = JSON.parse(fileData);
+  const db = await open({
+    filename: dbFilePath,
+    driver: sqlite3.Database,
+  });
 
-  return emailLogs;
+  try {
+    // Fetch all email logs from the database
+    const emailLogs = await db.all("SELECT * FROM emails");
+
+    return emailLogs;
+  } catch (error) {
+    console.error("Error fetching email logs:", error);
+    throw createError({ statusCode: 500, message: "Internal Server Error" });
+  } finally {
+    await db.close();
+  }
 });
