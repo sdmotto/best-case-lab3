@@ -2,7 +2,8 @@ import { getCookie } from "h3";
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
   if (import.meta.server) {
-    const jwt = await import("jsonwebtoken");
+    const jwtModule = await import("jsonwebtoken");
+    const jwt = jwtModule.default || jwtModule;
     const event = useRequestEvent();
     const token = getCookie(event, "authToken");
 
