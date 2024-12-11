@@ -30,6 +30,13 @@ const email = "motto.d.sam@gmail.com";
 </script>
 
 <style scoped>
+@font-face {
+  font-family: "Roboto";
+  src: url("~/assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .form-container {
   max-width: 600px;
   margin: 50px auto;
@@ -37,13 +44,14 @@ const email = "motto.d.sam@gmail.com";
   background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: "Arial", sans-serif;
+  font-family: "Roboto Regular", Roboto, sans-serif;
 }
 
 .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: "Roboto Regular", Roboto, sans-serif;
 }
 
 h1 {
@@ -51,12 +59,14 @@ h1 {
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
+  font-family: "Roboto Regular", Roboto, sans-serif;
 }
 
 p {
   font-size: 16px;
   margin-bottom: 20px;
   color: #555;
+  font-family: "Roboto Regular", Roboto, sans-serif;
 }
 
 .picture {
