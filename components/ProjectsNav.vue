@@ -68,12 +68,12 @@ nav a {
 
 /* Hover effect */
 nav a:hover {
-  color: #ffcc00; /* Gold on hover */
+  color: #ffcd00;
 }
 
 /* Active link styling */
 .active {
-  color: #ffcc00; /* Gold for active link */
+  color: #ffcd00;
 }
 
 @media (max-width: 768px) {
