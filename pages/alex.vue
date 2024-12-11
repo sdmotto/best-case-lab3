@@ -13,7 +13,7 @@
     <p>
       Hey there! I'm Alex Lehman, a fourth-year Computer Science and Engineering
       student at Iowa. I love music, especially J. Cole, Rex Orange County, and
-      Olivia Rodrigo. Also, go Hawkeyes, Cowboys, and Thunder!
+      Olivia Rodrigo. Also, go OKC Thunder!
     </p>
     <Form 
       :to="'alexlehman7@gmail.com'"

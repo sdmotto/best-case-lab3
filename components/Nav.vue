@@ -28,6 +28,13 @@
           ></span>
         </router-link>
       </li>
+      <li v-else @click="sendAlert()">
+        <router-link
+        to
+        >
+          Protected Area
+        </router-link>
+      </li>
       <li>
         <router-link
           to="/campbell"
@@ -140,6 +147,10 @@ async function unverify() {
   passwordInput.value = "";
 
   navigateTo("/");
+}
+
+function sendAlert() {
+  alert('You must be verified to view this section!');
 }
 
 const navigationSequence = ref([]);
