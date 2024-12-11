@@ -25,15 +25,15 @@
   <script setup>
   const getImage = (index) => {
     const images = [
-      new URL('@/assets/images/bell2.png', import.meta.url).href,
+      new URL('@/assets/images/Sexy Beast.jpg', import.meta.url).href,
       new URL('@/assets/images/bell2.png', import.meta.url).href,
       new URL('@/assets/images/alexLOL.jpg', import.meta.url).href,
       new URL('@/assets/images/bell2.png', import.meta.url).href,
       '', // Center box for the video
       new URL('@/assets/images/bell2.png', import.meta.url).href,
+      new URL('@/assets/images/samLOLOL.jpg', import.meta.url).href,
       new URL('@/assets/images/bell2.png', import.meta.url).href,
-      new URL('@/assets/images/bell2.png', import.meta.url).href,
-      new URL('@/assets/images/bell2.png', import.meta.url).href,
+      new URL('@/assets/images/ethanROFLMAO.jpg', import.meta.url).href,
     ];
     return images[index];
   };
