@@ -154,7 +154,7 @@ function sendAlert() {
 }
 
 const navigationSequence = ref([]);
-const requiredSequence = ["campbell", "alex", "sam", "ethan"];
+const requiredSequence = ["campbell", "alex", "sam", "ethan", "sam", "alex", "campbell"];
 
 watch(
   () => router.currentRoute.value.name, // Watch the current route name
