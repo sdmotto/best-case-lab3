@@ -1,18 +1,25 @@
 <template>
   <div class="form-container">
-    <div>
-      <h1>Contact Campbell Tressler</h1>
-      <p>
-        My name is Campbell Tressler. I am a computer science and engineering
-        student and the driver of the 87T IMCA Sport Compact car at the
-        Independence and Marshalltown Speedways. I spend my free time going to
-        the gym or working on my car.
-      </p>
-      <Form 
-        :to="'ctresslercf@gmail.com'"
-        :person="'Campbell'"
+    <div class="content">
+      <div>
+        <h1>Contact Campbell Tressler</h1>
+      </div>
+      <img
+        src="@/assets/images/Campbells car.png"
+        alt="Reall cool racecar"
+        class="picture"
       />
     </div>
+    <p>
+      My name is Campbell Tressler. I am a computer science and engineering
+      student and the driver of the 87T IMCA Sport Compact car at the
+      Independence and Marshalltown Speedways. I spend my free time going to
+      the gym or working on my car.
+    </p>
+    <Form 
+      :to="'ctresslercf@gmail.com'"
+      :person="'Campbell'"
+    />
   </div>
 </template>
 
