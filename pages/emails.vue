@@ -35,21 +35,21 @@
         <li
           v-for="(email, index) in filteredEmails"
           :key="index"
-          class="bg-white shadow-md rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+          class="bg-black text-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
         >
           <p class="mb-2">
-            <strong class="text-gray-700">From:</strong> {{ email.from }}
+            <strong class="text-white">From:</strong> {{ email.from }}
           </p>
           <p class="mb-2">
-            <strong class="text-gray-700">To:</strong> {{ email.to }}
+            <strong class="text-white">To:</strong> {{ email.to }}
           </p>
           <p class="mb-2">
-            <strong class="text-gray-700">Subject:</strong> {{ email.subject }}
+            <strong class="text-white">Subject:</strong> {{ email.subject }}
           </p>
           <p class="mb-4">
-            <strong class="text-gray-700">Message:</strong> {{ email.message }}
+            <strong class="text-white">Message:</strong> {{ email.message }}
           </p>
-          <p class="text-sm text-gray-500">
+          <p class="text-sm text-gray-300">
             <strong>Timestamp:</strong> {{ email.timestamp }}
           </p>
         </li>

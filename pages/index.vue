@@ -27,7 +27,7 @@
       <ul>
         <router-link to="/lab1">
           <li
-            class="mt-4 p-4 bg-white shadow-md rounded-lg hover:shadow-xl transition duration-300"
+            class="mt-4 p-4 bg-black text-white shadow-md rounded-lg hover:shadow-xl transition duration-300"
           >
             <strong>Lab 1:</strong> Designed a thermometer system that allowed
             users to view the temperature from a website and turn sensors on and
@@ -36,14 +36,14 @@
         </router-link>
         <router-link to="/lab2">
           <li
-            class="mt-4 p-4 bg-white shadow-md rounded-lg hover:shadow-xl transition duration-300"
+            class="mt-4 p-4 bg-black text-white shadow-md rounded-lg hover:shadow-xl transition duration-300"
           >
             <strong>Lab 2:</strong> Developed an IR receiver for a transmitter.
           </li>
         </router-link>
         <router-link to="/final-project">
           <li
-            class="mt-4 p-4 bg-white shadow-md rounded-lg hover:shadow-xl transition duration-300"
+            class="mt-4 p-4 bg-black text-white shadow-md rounded-lg hover:shadow-xl transition duration-300"
           >
             <strong>Senior Design Project:</strong> We plan to develop a driving
             simulator that uses Google Earth and Google Maps APIs so that users
