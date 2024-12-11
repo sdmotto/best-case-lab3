@@ -19,3 +19,5 @@ logs
 .idea
 
 db/dev.sqlite3
+
+.env

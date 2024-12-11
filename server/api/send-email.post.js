@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
     secure: true,
     auth: {
       user: "best.case.labs@gmail.com",
-      pass: "jrsk bxen fwqb ddkf",
+      pass: process.env.GMAIL_PASSWORD,
     },
   });
 
